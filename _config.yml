@@ -9,7 +9,7 @@ title:               Antony Jucan
 tagline:             'A Github Hosted Website'
 description:         'This is a website that lists my major life accomplishments'
 url:                 http://lanyon.getpoole.com
-baseurl:             ''
+baseurl:             '/Website'
 paginate:            5
 
 # About/contact
