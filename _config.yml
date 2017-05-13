@@ -8,8 +8,8 @@ permalink:           /Website
 title:               Antony Jucan
 tagline:             'A Github Hosted Website'
 description:         'This is a website that lists my major life accomplishments'
-url:                 http://lanyon.getpoole.com
-baseurl:             '/Website'
+url:                 https://caligula8.github.io/Website
+baseurl:             'https://caligula8.github.io/Website'
 paginate:            5
 
 # About/contact
