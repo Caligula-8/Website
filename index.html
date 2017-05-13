@@ -2,33 +2,53 @@
 layout: default
 title: Home
 ---
-{{ partial "default_head.html" . }}
-
-<!-- Space delimited list of page types -->
-{{ $paginator := .Paginate (where .Data.Pages "Type" "in" "post") }}
 
 <div class="posts">
-  {{ range .Paginator.Pages }}
-    <div class="post">
-        <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
-        <span class="post-date">{{ .Date.Format .Site.Params.DateForm }}</span>
-        {{ .Content }}
+  {% for post in paginator.posts %}
+
+  <ul class="tags">
+    {% for tag in post.tags %}
+      <li><a href="{{ site.baseurl }}tags.html#{{tag}}" class="tag">{{ tag }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
+
+    <div>
+      <span class="post-date" style="float: left;">{{ post.date | date_to_string }}</span>
+      <span class="post-date" data-post-url="{{ post.url }}" style="float: right;"></span>
     </div>
-  {{ end }}
+    <div style="clear: both;"></div>​
+
+    {{ post.excerpt }}
+
+    <br>
+
+    <a href="{{ post.url }}">
+        Continue reading...
+    </a>
+  </div>
+  {% endfor %}
 </div>
 
 <div class="pagination">
-  {{ if $paginator.HasNext }}
-  <a class="pagination-item older" href="{{ $paginator.Next.URL }}">Older</a>
-  {{ else }}
-  <span class="pagination-item older">Older</span>
-  {{ end }}
-
-  {{ if $paginator.HasPrev }}
-  <a class="pagination-item newer" href="{{ $paginator.Prev.URL }}">Newer</a>
-  {{ else }}
-  <span class="pagination-item newer">Newer</span>
-  {{ end }}
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
+    {% else %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
+    {% endif %}
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
 </div>
-
-{{ partial "default_foot.html" . }}
