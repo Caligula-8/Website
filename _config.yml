@@ -9,7 +9,7 @@ title:               Antony
 tagline:             'Website'
 description:         'This is a website that lists my major life accomplishments.'
 url:                 http://lanyon.getpoole.com
-baseurl:             '/Website'
+baseurl:             'https://caligula8.github.io/Website'
 paginate:            5
 
 # About/contact
