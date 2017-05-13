@@ -1,8 +1,8 @@
 # Permalinks
 #
 # Use of `relative_permalinks` ensures post links from the index work properly.
-permalink:           /Website
-
+permalink:           pretty
+# relative_permalinks: true
 
 # Setup
 title:               Antony Jucan
@@ -10,6 +10,8 @@ tagline:             'A Github Hosted Website'
 description:         'This is a website that lists my major life accomplishments'
 url:                 https://caligula8.github.io
 baseurl:             '/Website/'
+# The following line is required for Jekyll >=3 support
+gems:                [jekyll-paginate, jekyll-gist]
 paginate:            5
 
 # About/contact
@@ -19,6 +21,5 @@ author:
   email:             ajucan8@gmail.com
 
 # Custom vars
-version:             1.0.0
+version:             Lanyon
 
-theme: jekyll-theme-slate
