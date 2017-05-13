@@ -1,12 +1,13 @@
 # Permalinks
 permalink:           pretty
-
+relative_permalinks: true
 # Setup
 title:               Antony Jucan
 tagline:             'A Github Hosted Website'
 description:         'This is a website that lists my major life accomplishments'
-url:                 https://caligula8.github.io
-baseurl:             '/notes'
+url:                 http://lanyon.getpoole.com
+baseurl:             '/About'
+
 # The following line is required for Jekyll >=3 support
 paginate:            5
 excerpt_separator: '<br>'
