@@ -1,8 +1,6 @@
 ---
 layout: page
 title : Notes
-header : Notes
-group: navigation
 ---
 
 ## Jekyll and Jekyll-Bootstrap Notes
